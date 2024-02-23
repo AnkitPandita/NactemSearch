@@ -1,4 +1,4 @@
-# NectemSearch
+# NactemSearch
 This is a application for searching an acronym or initialism.
 
 # How to use the application:

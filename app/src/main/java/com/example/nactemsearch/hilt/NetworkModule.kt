@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
     @Provides
-    fun provideCoroutineTPSService(): NectemSearchService {
+    fun provideNectemSearchService(): NectemSearchService {
         val gson = GsonBuilder().create()
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))

@@ -1,7 +1,6 @@
 package com.example.nactemsearch.features.search
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,10 +21,6 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
-
-    companion object {
-        const val TAG = "SearchFragment"
-    }
 
     private val viewModel: SearchViewModel by viewModels()
     private lateinit var searchBar: SearchView
@@ -75,7 +70,6 @@ class SearchFragment : Fragment() {
                     when (it) {
                         is Response.Error -> {
                             searchAdapter.submitList(emptyList())
-                            Log.d(TAG, "bindCollector: ${it.errorMessage}")
                             exception.text = it.errorMessage
                             exception.visibility = View.VISIBLE
                             progressBar.visibility = View.GONE
